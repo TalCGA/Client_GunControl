@@ -10,7 +10,7 @@ request.onload = function () {
     var TweetsJson = JSON.parse(this.response);
 
     TweetsJson.forEach(tweet => {
-        // Log each movie's title
+        // Log each Tweet's Location
         console.log(tweet.location);
     });
 }
