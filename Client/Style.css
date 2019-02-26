@@ -1,0 +1,38 @@
+body {
+    font-family: 'Thasadith', sans-serif
+}
+#side-container {
+    position: relative;
+    visibility:hidden;
+    /*display: inline-block;*/
+    width: 300px;
+    height: 400px;
+}
+
+#state-details h3 {
+    margin: 18px 0 0 0;
+}
+
+#state-details p {
+    margin: 0 0 0 125px;
+    text-indent: -125px;
+}
+
+    #state-details p span.label {
+        display: inline-block;
+        margin: 0 -125px 0 125px;
+        width: 125px;
+    }
+
+#vote-chart {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 200px;
+}
+#main-container {
+    display: inline-block;
+    width: 650px;
+    height: 400px;
+}
