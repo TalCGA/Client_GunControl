@@ -4,7 +4,7 @@ var simplemaps_usmap_mapdata={
     width: "responsive", //'700' or 'responsive'
     background_color: "#FFFFFF",
     background_transparent: "no",
-    border_color: "blue",
+    border_color: "mediumblue",
     popups: "detect",
     
     //State defaults
@@ -16,21 +16,6 @@ var simplemaps_usmap_mapdata={
     all_states_inactive: "no",
     all_states_zoomable: "no",
     
-    //Location defaults
-    //location_description: "Add location markers using latitude and longitude!",
-    //location_color: "#2041D4",
-    //location_opacity: 0.8,
-    //location_hover_opacity: 1,
-    //location_url: "",
-    //location_size: 25,
-    //location_type: "square",
-    //location_image_source: "",
-    //location_border_color: "#FFFFFF",
-    //location_border: 2,
-    //location_hover_border: 2.5,
-    //all_locations_inactive: "no",
-    //all_locations_hidden: "no",
-    
     //Label defaults
     label_color: "black",
     label_hover_color: "black",
@@ -38,18 +23,6 @@ var simplemaps_usmap_mapdata={
       label_font: "Thasadith, bold",
     hide_labels: "no",
     hide_eastern_labels: "no",
-   
-    ////Zoom settings
-    //zoom: "no",
-    //back_image: "no",
-    //initial_back: "no",
-    //initial_zoom: -1,
-    //initial_zoom_solo: "no",
-    //region_opacity: 1,
-    //region_hover_opacity: 0.6,
-    //zoom_out_incrementally: "yes",
-    //zoom_percentage: 0.99,
-    //zoom_time: 0.5,
     
     //Popup settings
     popup_color: "white",
@@ -73,7 +46,7 @@ var simplemaps_usmap_mapdata={
     state_image_size: .50,
     location_image_url: "",
     state_image_url: "",
-    border_hover_size: "3.5",
+    border_hover_size: "2",
     manual_zoom: "no"
   },
   state_specific: {
@@ -88,7 +61,7 @@ var simplemaps_usmap_mapdata={
       name: "Florida",
     },
     NH: {
-      name: "New Hampshire",
+      name: "NewHampshire",
     },
     VT: {
       name: "Vermont",
@@ -97,17 +70,17 @@ var simplemaps_usmap_mapdata={
       name: "Maine",
     },
     RI: {
-      name: "Rhode Island",
+      name: "RhodeIsland",
     },
     NY: {
-      name: "New York",
+      name: "NewYork",
     
     },
     PA: {
       name: "Pennsylvania"
     },
     NJ: {
-      name: "New Jersey",
+      name: "NewJersey",
 
     },
     DE: {
@@ -123,7 +96,7 @@ var simplemaps_usmap_mapdata={
 
     },
     WV: {
-      name: "West Virginia"
+      name: "WestVirginia"
     },
     OH: {
       name: "Ohio"
@@ -143,7 +116,7 @@ var simplemaps_usmap_mapdata={
       name: "Wisconsin"
     },
     NC: {
-      name: "North Carolina"
+      name: "NorthCarolina"
     },
     DC: {
       name: "District of Columbia",
@@ -166,7 +139,7 @@ var simplemaps_usmap_mapdata={
       name: "Georgia"
     },
     SC: {
-      name: "South Carolina"
+      name: "SouthCarolina"
     },
     KY: {
       name: "Kentucky",
@@ -194,7 +167,7 @@ var simplemaps_usmap_mapdata={
       name: "Texas"
     },
     NM: {
-      name: "New Mexico",
+      name: "NewMexico",
 
     },
     KS: {
@@ -204,10 +177,10 @@ var simplemaps_usmap_mapdata={
       name: "Nebraska"
     },
     SD: {
-      name: "South Dakota"
+      name: "SouthDakota"
     },
     ND: {
-      name: "North Dakota"
+      name: "NorthDakota"
     },
     WY: {
       name: "Wyoming"
@@ -251,16 +224,16 @@ var simplemaps_usmap_mapdata={
       name: "Guam",
     },
     VI: {
-      name: "Virgin Islands",
+      name: "VirginIslands",
     },
     PR: {
-      name: "Puerto Rico",
+      name: "PuertoRico",
     },
     MP: {
-      name: "Northern Mariana Islands",
+      name: "NorthernMarianaIslands",
     },
     AS: {
-      name: "American Samoa",
+      name: "AmericanSamoa",
     }
   },
   locations: {},
@@ -339,8 +312,8 @@ var simplemaps_usmap_mapdata={
     },
     HI: {
       parent_id: "HI",
-      x: 305,
-      y: 565,
+      x: "305",
+      y: "565",
       pill: "yes"
     },
     AK: {
