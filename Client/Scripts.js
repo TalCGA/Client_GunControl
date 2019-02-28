@@ -93,6 +93,9 @@ client.get('https://gunscontrol.herokuapp.com/view2', function (response) {
     });
 
     var valueAxis1 = chart1.yAxes.push(new am4charts.ValueAxis());
+    valueAxis1.max = 4000; 
+    valueAxis1.min = 500; 
+
 
     // Create series
     var series1 = chart1.series.push(new am4charts.ColumnSeries());
@@ -126,6 +129,7 @@ client.get('https://gunscontrol.herokuapp.com/view2', function (response) {
     categoryAxis2.renderer.grid.template.location = 0;
     categoryAxis2.renderer.minGridDistance = 30;
 
+
     categoryAxis2.renderer.labels.template.adapter.add("dy", function (dy, target) {
         if (target.dataItem && target.dataItem.index & 2 == 2) {
             return dy + 25;
@@ -134,6 +138,8 @@ client.get('https://gunscontrol.herokuapp.com/view2', function (response) {
     });
 
     var valueAxis2 = chart2.yAxes.push(new am4charts.ValueAxis());
+    valueAxis2.max = 4000; 
+    valueAxis2.min = 500; 
 
     // Create series
     var series2 = chart2.series.push(new am4charts.ColumnSeries());
@@ -161,116 +167,116 @@ client.get('https://gunscontrol.herokuapp.com/view2', function (response) {
     document.getElementById("prec_repub").innerHTML = "Ratio: " + ratio2 + " population/against tweets"
 });
 
-   
-    client.get('https://gunscontrol.herokuapp.com/view3', function (response) {
-        var View3Json = JSON.parse(response)
-        //--------------------View3-----------------------    
-        //// Themes begin
-        am4core.useTheme(am4themes_animated);
-        //// Themes end
+//--------------------View3-----------------------    
 
-        // Create chart instance
-        var chartPie1 = am4core.create("chartdivPie1", am4charts.PieChart);
+client.get('https://gunscontrol.herokuapp.com/view3', function (response) {
+    var View3Json = JSON.parse(response)
+    //// Themes begin
+    am4core.useTheme(am4themes_animated);
+    //// Themes end
 
-        // Add data
-        chartPie1.data = [{
-            "Opinion": "Against",
-            "Number of Tweets": View3Json[0].against
-        }, {
-            "Opinion": "Pro",
-            "Number of Tweets": View3Json[0].positive
-        }, {
-            "Opinion": "Neutral",
-            "Number of Tweets": View3Json[0].neutral
-        }];
+    // Create chart instance
+    var chartPie1 = am4core.create("chartdivPie1", am4charts.PieChart);
 
-        // Add and configure Series
-        var pieSeries1 = chartPie1.series.push(new am4charts.PieSeries());
-        pieSeries1.dataFields.value = "Number of Tweets";
-        pieSeries1.dataFields.category = "Opinion";
-        pieSeries1.slices.template.stroke = am4core.color("#fff");
-        pieSeries1.slices.template.strokeWidth = 2;
-        pieSeries1.slices.template.strokeOpacity = 1;
+    // Add data
+    chartPie1.data = [{
+        "Opinion": "Against",
+        "Number of Tweets": View3Json[0].against
+    }, {
+        "Opinion": "Pro",
+        "Number of Tweets": View3Json[0].positive
+    }, {
+        "Opinion": "Neutral",
+        "Number of Tweets": View3Json[0].neutral
+    }];
 
-        // This creates initial animation
-        pieSeries1.hiddenState.properties.opacity = 1;
-        pieSeries1.hiddenState.properties.endAngle = -90;
-        pieSeries1.hiddenState.properties.startAngle = -90;
+    // Add and configure Series
+    var pieSeries1 = chartPie1.series.push(new am4charts.PieSeries());
+    pieSeries1.dataFields.value = "Number of Tweets";
+    pieSeries1.dataFields.category = "Opinion";
+    pieSeries1.slices.template.stroke = am4core.color("#fff");
+    pieSeries1.slices.template.strokeWidth = 2;
+    pieSeries1.slices.template.strokeOpacity = 1;
 
-        //----------------second Pie
-        //// Themes begin
-        //am4core.useTheme(am4themes_animated);
-        //// Themes end
+    // This creates initial animation
+    pieSeries1.hiddenState.properties.opacity = 1;
+    pieSeries1.hiddenState.properties.endAngle = -90;
+    pieSeries1.hiddenState.properties.startAngle = -90;
 
-        // Create chart instance
-        var chartPie2 = am4core.create("chartdivPie2", am4charts.PieChart);
+    //----------------second Pie
+    //// Themes begin
+    //am4core.useTheme(am4themes_animated);
+    //// Themes end
 
-        // Add data
-        chartPie2.data = [{
-            "Opinion": "Against",
-            "Number of Tweets": View3Json[1].against
-        }, {
-            "Opinion": "Pro",
-            "Number of Tweets": View3Json[1].positive
-        }, {
-            "Opinion": "Neutral",
-            "Number of Tweets": View3Json[1].neutral
-        }];
+    // Create chart instance
+    var chartPie2 = am4core.create("chartdivPie2", am4charts.PieChart);
 
-        // Add and configure Series
-        var pieSeries2 = chartPie2.series.push(new am4charts.PieSeries());
-        pieSeries2.dataFields.value = "Number of Tweets";
-        pieSeries2.dataFields.category = "Opinion";
-        pieSeries2.slices.template.stroke = am4core.color("#fff");
-        pieSeries2.slices.template.strokeWidth = 2;
-        pieSeries2.slices.template.strokeOpacity = 1;
+    // Add data
+    chartPie2.data = [{
+        "Opinion": "Against",
+        "Number of Tweets": View3Json[1].against
+    }, {
+        "Opinion": "Pro",
+        "Number of Tweets": View3Json[1].positive
+    }, {
+        "Opinion": "Neutral",
+        "Number of Tweets": View3Json[1].neutral
+    }];
 
-        // This creates initial animation
-        pieSeries2.hiddenState.properties.opacity = 1;
-        pieSeries2.hiddenState.properties.endAngle = -90;
-        pieSeries2.hiddenState.properties.startAngle = -90;
+    // Add and configure Series
+    var pieSeries2 = chartPie2.series.push(new am4charts.PieSeries());
+    pieSeries2.dataFields.value = "Number of Tweets";
+    pieSeries2.dataFields.category = "Opinion";
+    pieSeries2.slices.template.stroke = am4core.color("#fff");
+    pieSeries2.slices.template.strokeWidth = 2;
+    pieSeries2.slices.template.strokeOpacity = 1;
 
-        //----------------third Pie
-        //// Themes begin
-        //am4core.useTheme(am4themes_animated);
-        //// Themes end
+    // This creates initial animation
+    pieSeries2.hiddenState.properties.opacity = 1;
+    pieSeries2.hiddenState.properties.endAngle = -90;
+    pieSeries2.hiddenState.properties.startAngle = -90;
 
-        // Create chart instance
-        var chartPie3 = am4core.create("chartdivPie3", am4charts.PieChart);
+    //----------------third Pie
+    //// Themes begin
+    //am4core.useTheme(am4themes_animated);
+    //// Themes end
 
-        // Add data
-        chartPie3.data = [{
-            "Opinion": "Against",
-            "Number of Tweets": View3Json[2].against
-        }, {
-            "Opinion": "Pro",
-            "Number of Tweets": View3Json[2].positive
-        }, {
-            "Opinion": "Neutral",
-            "Number of Tweets": View3Json[2].neutral
-        }];
+    // Create chart instance
+    var chartPie3 = am4core.create("chartdivPie3", am4charts.PieChart);
 
-        // Add and configure Series
-        var pieSeries3 = chartPie3.series.push(new am4charts.PieSeries());
-        pieSeries3.dataFields.value = "Number of Tweets";
-        pieSeries3.dataFields.category = "Opinion";
-        pieSeries3.slices.template.stroke = am4core.color("#fff");
-        pieSeries3.slices.template.strokeWidth = 2;
-        pieSeries3.slices.template.strokeOpacity = 1;
+    // Add data
+    chartPie3.data = [{
+        "Opinion": "Against",
+        "Number of Tweets": View3Json[2].against
+    }, {
+        "Opinion": "Pro",
+        "Number of Tweets": View3Json[2].positive
+    }, {
+        "Opinion": "Neutral",
+        "Number of Tweets": View3Json[2].neutral
+    }];
 
-        // This creates initial animation
-        pieSeries3.hiddenState.properties.opacity = 1;
-        pieSeries3.hiddenState.properties.endAngle = -90;
-        pieSeries3.hiddenState.properties.startAngle = -90;
+    // Add and configure Series
+    var pieSeries3 = chartPie3.series.push(new am4charts.PieSeries());
+    pieSeries3.dataFields.value = "Number of Tweets";
+    pieSeries3.dataFields.category = "Opinion";
+    pieSeries3.slices.template.stroke = am4core.color("#fff");
+    pieSeries3.slices.template.strokeWidth = 2;
+    pieSeries3.slices.template.strokeOpacity = 1;
+
+    // This creates initial animation
+    pieSeries3.hiddenState.properties.opacity = 1;
+    pieSeries3.hiddenState.properties.endAngle = -90;
+    pieSeries3.hiddenState.properties.startAngle = -90;
 
 
 
-        //Add state names
-        document.getElementById("pie1").innerHTML = View3Json[0].country 
-        document.getElementById("pie2").innerHTML = View3Json[1].country  
-        document.getElementById("pie3").innerHTML = View3Json[2].country 
+    //Add state names
+    document.getElementById("pie1").innerHTML = View3Json[0].country 
+    document.getElementById("pie2").innerHTML = View3Json[1].country  
+    document.getElementById("pie3").innerHTML = View3Json[2].country 
 
-     });
+    });
 
     
     //});
