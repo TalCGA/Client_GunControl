@@ -36,7 +36,7 @@ client.get('https://guncontrol.herokuapp.com/getAllCountries', function (respons
 
         else if (JSON.stringify(getObjects(JSON.parse(info), 'opinion', 'Democratic')).length > 2 || Array.isArray(JSON.stringify(getObjects(JSON.parse(info), 'opinion', 'Democratic')))) {
             state.image_url = 'https://d1qhuz9ahqnrhh.cloudfront.net/wp-content/uploads/2011/10/2000px-DemocraticLogo.svg_-300x293.png'
-            state.description = "Democratic Opinion"
+            state.description = "Democrate Opinion"
             if (JSON.stringify(getObjects(JSON.parse(info), 'tweet_sentiment', 'for')).length > 2 || Array.isArray(JSON.stringify(getObjects(JSON.parse(info), 'tweet_sentiment', 'for')))) {
                 state.border_color = '#33cc33'
             }
@@ -47,8 +47,14 @@ client.get('https://guncontrol.herokuapp.com/getAllCountries', function (respons
         }
         else {
             //state.image_url = 'https://static.thenounproject.com/png/1439126-200.png'
-            state.description = "Not Enough Data"
-            state.border_color = 'black'
+            state.description = "Neither Opinion"
+            if (JSON.stringify(getObjects(JSON.parse(info), 'tweet_sentiment', 'for')).length > 2 || Array.isArray(JSON.stringify(getObjects(JSON.parse(info), 'tweet_sentiment', 'for')))) {
+                state.border_color = '#33cc33'
+
+            }
+            else if (JSON.stringify(getObjects(JSON.parse(info), 'tweet_sentiment', 'against')).length > 2 || Array.isArray(JSON.stringify(getObjects(JSON.parse(info), 'tweet_sentiment', 'against')))) {
+                state.border_color = '#ff0000'
+            }
         }
     }
 
