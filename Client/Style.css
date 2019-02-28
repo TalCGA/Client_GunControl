@@ -8,34 +8,53 @@ body {
     width: 650px;
     height: 570px;
 }
-#chartdivBar{
-    /*margin-top:500px;*/
+/*#chartdivBar{
+    margin-top:500px;
     width: 1000px;
     height: 500px;
     margin:auto;
-}
+}*/
 
 /* Clear floats after the columns */
-#View3:after {
+#View3:after, #View2:after{
     content: "";
     display: table;
     clear: both;
     height: 150px;
 }
 #chartdivPie1, #chartdivPie2, #chartdivPie3 {
-    height:245px;
+    height:235px;
+}
+#chartdivBar1, #chartdivBar2 {
+    height: 250px;
 }
 .Pie {
     float: left;
     width: 33.33%;
+}
+.Bar {
+    float: left;
+    width: 50%;
 }
 
 h1, h2 {
     font-family: 'Thasadith', sans-serif;
     text-align: center
 }
+
+h3 {
+    font-family: 'Thasadith', sans-serif;
+    font-weight:400;
+    text-align: center
+}
 .view3Title {
     margin-bottom: 100px;
+}
+
+img{
+    display:block;
+    margin:auto;
+    height:450px;
 }
 
 #arrow {
