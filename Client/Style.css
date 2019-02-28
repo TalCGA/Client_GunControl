@@ -1,42 +1,47 @@
 body {
     font-family: 'Thasadith', sans-serif;
 }
-#side-container {
-    font-family: 'Thasadith', sans-serif;
-    position: relative;
-    visibility: hidden;
-    /*display: inline-block;*/
-    width: 300px;
-    height: 400px;
-}
 
-#state-details h3 {
-    font-family: 'Thasadith', sans-serif;
-    margin: 18px 0 0 0;
-}
-
-#state-details p {
-    margin: 0 0 0 125px;
-    text-indent: -125px;
-}
-
-    #state-details p span.label {
-        display: inline-block;
-        margin: 0 -125px 0 125px;
-        width: 125px;
-    }
-
-#vote-chart {
-    font-family: 'Thasadith', sans-serif;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 300px;
-    height: 200px;
-}
 #main-container {
     font-family: 'Thasadith', sans-serif;
-    display: inline-block;
+    margin: auto;
     width: 650px;
-    height: 400px;
+    height: 570px;
+}
+#chartdivBar{
+    /*margin-top:500px;*/
+    width: 1000px;
+    height: 500px;
+    margin:auto;
+}
+
+/* Clear floats after the columns */
+#View3:after {
+    content: "";
+    display: table;
+    clear: both;
+    height: 150px;
+}
+#chartdivPie1, #chartdivPie2, #chartdivPie3 {
+    height:245px;
+}
+.Pie {
+    float: left;
+    width: 33.33%;
+}
+
+h1, h2 {
+    font-family: 'Thasadith', sans-serif;
+    text-align: center
+}
+.view3Title {
+    margin-bottom: 100px;
+}
+
+#arrow {
+    display: block;
+    margin: auto;
+    /*margin-top: -377px;*/
+    height: 50px;
+    width: 66px;
 }

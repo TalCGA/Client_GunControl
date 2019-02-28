@@ -38,23 +38,180 @@ client.get('https://guncontrol.herokuapp.com/getAllCountries', function (respons
             state.image_url = 'https://d1qhuz9ahqnrhh.cloudfront.net/wp-content/uploads/2011/10/2000px-DemocraticLogo.svg_-300x293.png'
             state.description = "Democratic Opinion"
             if (JSON.stringify(getObjects(JSON.parse(info), 'tweet_sentiment', 'for')).length > 2 || Array.isArray(JSON.stringify(getObjects(JSON.parse(info), 'tweet_sentiment', 'for')))) {
-                state.border_color ='#33cc33'
+                state.border_color = '#33cc33'
             }
             else if (JSON.stringify(getObjects(JSON.parse(info), 'tweet_sentiment', 'against')).length > 2 || Array.isArray(JSON.stringify(getObjects(JSON.parse(info), 'tweet_sentiment', 'against')))) {
-                state.border_color = '#ff0000'        
+                state.border_color = '#ff0000'
             }
 
         }
         else {
             //state.image_url = 'https://static.thenounproject.com/png/1439126-200.png'
             state.description = "Not Enough Data"
-            state.border_color='black'
+            state.border_color = 'black'
         }
-
     }
 
-  
+    //----------------------------------------------
+    // Themes begin
+    am4core.useTheme(am4themes_animated);
+    // Themes end
+
+    // Create chart instance
+    var chart = am4core.create("chartdivBar", am4charts.XYChart);
+
+    // Add data
+    chart.data = [{
+        "country": "USA",
+        "tweets": 2025
+    }, {
+        "country": "China",
+        "tweets": 1882
+    }, {
+        "country": "Japan",
+        "tweets": 1809
+    }, {
+        "country": "Germany",
+        "tweets": 1322
+    }, {
+        "country": "UK",
+        "tweets": 1122
+    }];
+
+    // Create axes
+
+    var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+    categoryAxis.dataFields.category = "country";
+    categoryAxis.renderer.grid.template.location = 0;
+    categoryAxis.renderer.minGridDistance = 30;
+
+    categoryAxis.renderer.labels.template.adapter.add("dy", function (dy, target) {
+        if (target.dataItem && target.dataItem.index & 2 == 2) {
+            return dy + 25;
+        }
+        return dy;
+    });
+
+    var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+
+    // Create series
+    var series = chart.series.push(new am4charts.ColumnSeries());
+    series.dataFields.valueY = "tweets";
+    series.dataFields.categoryX = "country";
+    series.name = "Tweets";
+    series.columns.template.tooltipText = "{categoryX}: [bold]{valueY}[/]";
+    series.columns.template.fillOpacity = .8;
+
+    var columnTemplate = series.columns.template;
+    columnTemplate.strokeWidth = 2;
+    columnTemplate.strokeOpacity = 1;
+
+    //view3----------------------------------------------------------------
+    //// Themes begin
+    //am4core.useTheme(am4themes_animated);
+    //// Themes end
+
+    // Create chart instance
+    var chartPie1 = am4core.create("chartdivPie1", am4charts.PieChart);
+
+    // Add data
+    chartPie1.data = [{
+        "country": "Against",
+        "Number of Tweets": 806
+    }, {
+        "country": "Pro",
+        "Number of Tweets": 201
+    }, {
+        "country": "Neutral",
+        "Number of Tweets": 50
+    }];
+
+    // Add and configure Series
+    var pieSeries1 = chartPie1.series.push(new am4charts.PieSeries());
+    pieSeries1.dataFields.value = "Number of Tweets";
+    pieSeries1.dataFields.category = "country";
+    pieSeries1.slices.template.stroke = am4core.color("#fff");
+    pieSeries1.slices.template.strokeWidth = 2;
+    pieSeries1.slices.template.strokeOpacity = 1;
+
+    // This creates initial animation
+    pieSeries1.hiddenState.properties.opacity = 1;
+    pieSeries1.hiddenState.properties.endAngle = -90;
+    pieSeries1.hiddenState.properties.startAngle = -90;
+
+    //----------------second Pie
+    //// Themes begin
+    //am4core.useTheme(am4themes_animated);
+    //// Themes end
+
+    // Create chart instance
+    var chartPie2 = am4core.create("chartdivPie2", am4charts.PieChart);
+
+    // Add data
+    chartPie2.data = [{
+        "country": "Against",
+        "Number of Tweets": 806
+    }, {
+        "country": "Pro",
+        "Number of Tweets": 201
+    }, {
+        "country": "Neutral",
+        "Number of Tweets": 50
+    }];
+
+    // Add and configure Series
+    var pieSeries2 = chartPie2.series.push(new am4charts.PieSeries());
+    pieSeries2.dataFields.value = "Number of Tweets";
+    pieSeries2.dataFields.category = "country";
+    pieSeries2.slices.template.stroke = am4core.color("#fff");
+    pieSeries2.slices.template.strokeWidth = 2;
+    pieSeries2.slices.template.strokeOpacity = 1;
+
+    // This creates initial animation
+    pieSeries2.hiddenState.properties.opacity = 1;
+    pieSeries2.hiddenState.properties.endAngle = -90;
+    pieSeries2.hiddenState.properties.startAngle = -90;
+
+    //----------------third Pie
+    //// Themes begin
+    //am4core.useTheme(am4themes_animated);
+    //// Themes end
+
+    // Create chart instance
+    var chartPie3 = am4core.create("chartdivPie3", am4charts.PieChart);
+
+    // Add data
+    chartPie3.data = [{
+        "country": "Against",
+        "Number of Tweets": 806
+    }, {
+        "country": "Pro",
+        "Number of Tweets": 201
+    }, {
+        "country": "Neutral",
+        "Number of Tweets": 50
+    }];
+
+    // Add and configure Series
+    var pieSeries3 = chartPie3.series.push(new am4charts.PieSeries());
+    pieSeries3.dataFields.value = "Number of Tweets";
+    pieSeries3.dataFields.category = "country";
+    pieSeries3.slices.template.stroke = am4core.color("#fff");
+    pieSeries3.slices.template.strokeWidth = 2;
+    pieSeries3.slices.template.strokeOpacity = 1;
+
+    // This creates initial animation
+    pieSeries3.hiddenState.properties.opacity = 1;
+    pieSeries3.hiddenState.properties.endAngle = -90;
+    pieSeries3.hiddenState.properties.startAngle = -90;
 });
+  
+
+//client.get('https://guncontrol.herokuapp.com/getTopPositive', function (response) {
+//    var StatesJson = JSON.parse(response)
+
+    
+    //});
 
 
 ////return an array of objects according to key, value, or key and value matching

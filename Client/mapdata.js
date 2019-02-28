@@ -4,7 +4,7 @@ var simplemaps_usmap_mapdata={
     width: "responsive", //'700' or 'responsive'
     background_color: "#FFFFFF",
     background_transparent: "no",
-    border_color: "mediumblue",
+      border_color: "#85C4E3",
     popups: "detect",
     
     //State defaults
